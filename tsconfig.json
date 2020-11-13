@@ -1,0 +1,76 @@
+{
+//	"extends": "./tsconfig.paths.json",
+	"compilerOptions": {
+
+		"typeRoots": ["src/customType/", "node_modules/@types/"],
+		"module": "commonJS",
+		"target": "ES2020",
+		"jsx": "react",
+		"experimentalDecorators" : true,
+		"strictPropertyInitialization": false,
+		"emitDecoratorMetadata" : true,
+		"rootDir": ".",
+		"outDir": "dist",
+		"allowJs" : true,
+		"moduleResolution": "node",
+		"noImplicitAny": false,
+		"allowSyntheticDefaultImports": true,
+			// import R from "ramda" 허용
+		"keyofStringsOnly": true,
+		"noImplicitThis": true,
+		"strictNullChecks": true,
+		"esModuleInterop": true,
+		"strict" : true,
+		"baseUrl" : "./",
+		"paths": {
+			// client
+			"@components/*": [
+				"src/client/components/*"
+			],
+			"@client/utils/*": [
+				"src/client/utils/*"
+			],
+			"@reducer/*": [
+				"src/client/redux/reducer/*"
+			],
+			"@context/*": [
+				"src/client/redux/*"
+			],
+
+			"@store" : [
+				"src/client/redux/store/index.ts"
+			],
+
+			// server
+			"@model/*" : [
+				"src/server/db/model/*"
+			],
+			"@middleware/*" : [
+				"src/server/middleware/*"
+			],
+			"@router/*" : [
+				"src/server/router/*"
+			],
+
+			"@server/utils/*" : [
+				"src/server/utils/*"
+			]
+
+
+
+			// common
+			,"@constant" : [
+				"src/constant.ts"
+			]
+			,
+			"@schema/*" : [
+				"src/schema/*"
+			],"@common" : [
+				"src/common.ts"
+			]
+
+		}
+	},
+	"exclude": ["./node_modules/**/*"],
+	"include": ["./src/**/*"]
+}
